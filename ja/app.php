@@ -17,7 +17,6 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-<<<<<<< HEAD
     'A verification has been sent to your email. Please confirm.' => '',
     'About' => '',
     'Actions' => '',
@@ -91,21 +90,4 @@ return [
     'Password Hash' => '@@@@',
     'Password Reset Token' => '@@@@',
     'This is a string to translate!' => '@@@@',
-=======
-    'About' => '',
-    'Auth Key' => '',
-    'Contact' => '',
-    'Created At' => '',
-    'Email' => '',
-    'Home' => '',
-    'ID' => '',
-    'Login' => '',
-    'Password Hash' => '',
-    'Password Reset Token' => '',
-    'Signup' => '',
-    'Status' => '',
-    'This is a string to translate!' => '',
-    'Updated At' => '',
-    'Username' => '',
->>>>>>> ade84cef3368ca0019bbb716fb8d77ac3bbea245
 ];

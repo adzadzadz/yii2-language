@@ -17,7 +17,6 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-<<<<<<< HEAD
     'A verification has been sent to your email. Please confirm.' => '',
     'Actions' => '',
     'Address line 1' => '',
@@ -80,6 +79,7 @@ return [
     'Update' => '',
     'Updated At' => '',
     'User ID' => '',
+    'Username' => '',
     'Verification Code' => '',
     'Weak' => '',
     'Website' => '',
@@ -90,21 +90,4 @@ return [
     'This is a string to translate!' => '@@madapaka!@@',
     'About' => 'Mungaw',
     'Home' => 'Bogo',
-=======
-    'About' => 'Mungaw',
-    'Auth Key' => '',
-    'Contact' => '',
-    'Created At' => '',
-    'Email' => '',
-    'Home' => 'Bogo',
-    'ID' => '',
-    'Login' => '',
-    'Password Hash' => '',
-    'Password Reset Token' => '',
-    'Signup' => '',
-    'Status' => '',
-    'Updated At' => '',
-    'This is a string to translate!' => 'madapaka!',
->>>>>>> ade84cef3368ca0019bbb716fb8d77ac3bbea245
-    'Username' => 'GAY',
 ];
