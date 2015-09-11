@@ -1,5 +1,5 @@
 {
-    "name": "adzadzadz/yii2-strepz-language",
+    "name": "adzadzadz/yii2-language",
     "description": "Strepz language translation",
     "type": "yii2-extension",
     "keywords": ["yii2","extension"],
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "adz\\strepz\\language\\": ""
+            "adz\\yii2\\language\\": ""
         }
     }
 }

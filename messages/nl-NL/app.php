@@ -94,7 +94,6 @@ return [
     'Updated At' => '',
     'User ID' => '',
     'Username' => '',
-    'Verication Code' => '',
     'Verification Code' => '',
     'Weak' => '',
     'Website' => '',
@@ -105,4 +104,5 @@ return [
     'me@myemailaddress.com' => '',
     'password' => '',
     'tbd' => '',
+    'Verication Code' => '@@@@',
 ];
