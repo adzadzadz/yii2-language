@@ -63,7 +63,7 @@ class DefaultController extends Controller
     {
     	if (!\Yii::$app->user->isGuest) {
     		return $this->render('index', [
-    			'config' => require('@yii2language/config.php'),
+    			'config' => require(__DIR__ . '/config.php'),
     		]);
     	}
     	return $this->goHome();
@@ -85,7 +85,7 @@ class DefaultController extends Controller
 		$message = new Language;
 		return $this->render('category', [
 			'language' => $language,
-			'config' => require('@yii2language/config.php'),
+			'config' => require(__DIR__ . '/config.php'),
 		]);
 
     }
