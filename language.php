@@ -1,10 +1,10 @@
 <?php
 
-namespace app\modules\yii2language;
+namespace adz\yii2\language;
 
 class Language extends \yii\base\Module
 {
-    public $controllerNamespace = 'app\modules\yii2language\controllers';
+    public $controllerNamespace = 'adz\yii2\language\controllers';
 
     public function init()
     {

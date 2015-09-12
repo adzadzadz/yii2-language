@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\yii2language\models;
+namespace adz\yii2\language\models;
 
 use Yii;
 use yii\base\Model;
-use app\modules\yii2language\models\Source;
-use app\modules\yii2language\models\Message;
+use adz\yii2\language\models\Source;
+use adz\yii2\language\models\Message;
 
 class Language extends Model
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\yii2language\models;
+namespace adz\yii2\language\models;
 
 use Yii;
 

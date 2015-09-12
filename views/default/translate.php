@@ -3,7 +3,7 @@
     $this->title = 'Language Module';
 
     use yii\helpers\Url;
-    use app\modules\yii2language\assets\MainAsset;
+    use adz\yii2\language\assets\MainAsset;
     MainAsset::register($this);
 ?>
 

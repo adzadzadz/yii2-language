@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\yii2language\controllers;
+namespace adz\yii2\language\controllers;
 
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use app\modules\yii2language\models\Language;
+use adz\yii2\language\models\Language;
 
 class DefaultController extends Controller
 {
@@ -63,7 +63,7 @@ class DefaultController extends Controller
     {
     	if (!\Yii::$app->user->isGuest) {
     		return $this->render('index', [
-    			'config' => require(__DIR__ . '/../config.php'),
+    			'config' => require('@yii2language/config.php'),
     		]);
     	}
     	return $this->goHome();
@@ -85,7 +85,7 @@ class DefaultController extends Controller
 		$message = new Language;
 		return $this->render('category', [
 			'language' => $language,
-			'config' => require(__DIR__ . '/../config.php'),
+			'config' => require('@yii2language/config.php'),
 		]);
 
     }

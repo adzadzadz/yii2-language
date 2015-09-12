@@ -6,12 +6,12 @@
     "license": "GPL-3.0+",
     "authors": [
         {
-            "name": "Adrian",
+            "name": "Adz",
             "email": "adzbite@gmail.com"
         }
     ],
     "require": {
-        "yiisoft/yii2": "*"
+        "yiisoft/yii2": ">=2.0.6"
     },
     "autoload": {
         "psr-4": {
