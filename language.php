@@ -10,6 +10,7 @@ class Language extends \yii\base\Module
     {
         parent::init();
 
+        \Yii::setAlias('@yii2language', __DIR__ );
         // custom initialization code goes here
     }
 }
