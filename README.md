@@ -1,5 +1,22 @@
 # Installation
 
+### Install with composer. Add to composer.json from yii2 root dir.
+```
+"require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": ">=2.0.6",
+    "yiisoft/yii2-bootstrap": "*",
+    "yiisoft/yii2-swiftmailer": "*",
+    "adzadzadz/yii2-language": "*"
+},
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/adzadzadz/yii2-language"
+    }
+]
+```
+
 ### Migrate required tables.
 - $ php yii migrate --migrationPath=vendor/adzadzadz/yii2-language/migration --interactive=0
 
