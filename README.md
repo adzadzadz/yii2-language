@@ -9,9 +9,9 @@
     }
 ]
 ```
-then
+then from your terminal,
 ```
-require adzadzadz/yii2-language:dev-master
+$ composer require adzadzadz/yii2-language:dev-master
 ```
 
 ### Migrate required tables.
