@@ -3,8 +3,8 @@
 ### Migrate required tables.
 - $ php yii migrate --migrationPath=vendor/adzadzadz/yii2-language/migration --interactive=0
 
-### extract all tranlate enabled elements on all files
-- From the root yii2 installation 
+### extract all translate/i18n enabled elements from all files
+- From the root yii2 installation, enter command shown below.
 ```
 $ php ./yii message/extract vendor/adzadzadz/yii2-language/config.php
 ```
@@ -13,7 +13,7 @@ $ php ./yii message/extract vendor/adzadzadz/yii2-language/config.php
 ```
 'modules' => [
         'language' => [
-            'class' => 'app\modules\yii2language\language',
+            'class' => 'adz\yii2\language',
             //'viewPath' => __DIR__ . '/../../frontend/views', // (optional) blogger will use default views from adzadzadz/yii2-language/views if not set
             'aliases' => [
                 '@strepzAliasSample' => 'This is an alias sample', // echo \Yii::getAlias('@bloggerSample') ;
@@ -23,6 +23,6 @@ $ php ./yii message/extract vendor/adzadzadz/yii2-language/config.php
 ];
 ```
 
-#### That's it, you're all set.
+#### access http://yourdomain.com/index.php?r=language... That's it, you're all set.
 
 ## For suggestions, bug report, and whatsoever... Email me at adz@adzbyte.com
