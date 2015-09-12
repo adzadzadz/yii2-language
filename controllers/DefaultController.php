@@ -9,7 +9,7 @@ use app\modules\yii2language\models\Language;
 
 class DefaultController extends Controller
 {
-	
+	// Enable language on all pages rendered by this controller.
 	public function init()
     {
         \Yii::$app->language = \Yii::$app->request->cookies->getValue('language', 'en-US');
@@ -36,18 +36,25 @@ class DefaultController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    // 'update' => ['post'],
+                    'update' => ['post'],
+                    'language' => ['post'],
                 ],
             ],
         ];
     }
 
+    /**
+     *
+     * actionLanguage is used to shift between languages.
+     * Only supports POST method using POST name 'language'.
+     *
+     */
     public function actionLanguage()
     {
-        $cookies = Yii::$app->response->cookies;
+        $cookies = \Yii::$app->response->cookies;
         $cookies->add(new \yii\web\Cookie([
             'name' => 'language',
-            'value' => Yii::$app->request->post()['language'],
+            'value' => \Yii::$app->request->post()['language'],
         ]));
         return $this->goBack();
     }
