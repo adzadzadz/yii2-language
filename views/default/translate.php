@@ -36,7 +36,7 @@
                     <td><?= $eachSource->message ?></td>
                 <?php foreach ($translation['message'] as $eachMessage) { ?>
                     <?php if ($eachSource->id === $eachMessage->id && $eachMessage->language === $language): ?>
-                        <td>
+                        <td width="50%">
                         <input type="text" class="form-control translate" data-id="<?= $eachMessage->id ?>" value="<?= $eachMessage->translation ?>">
                         </td>
                     <?php endif ?>

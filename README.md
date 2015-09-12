@@ -36,6 +36,20 @@ $ php ./yii message/extract vendor/adzadzadz/yii2-language/config.php
 ],
 ```
 
+### AND MAKE SURE TO ENABLE i18n by adding this into your components
+```
+'i18n' => [
+    'translations' => [
+        // SIMPLY MEANS ALL CATEGORY
+        '*' => [
+            'class' => 'yii\i18n\DbMessageSource',
+            'sourceMessageTable' => '{{%language_source}}',
+            'messageTable' => '{{%language_message}}',
+            'sourceLanguage' => 'en-US',
+           ],
+    ],
+],
+```
 #### access http://yourdomain.com/index.php?r=language... That's it, you're all set.
 
 ## For suggestions, bug report, and whatsoever... Email me at adz@adzbyte.com
