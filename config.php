@@ -6,6 +6,14 @@ return [
     // array, required, list of language codes that the extracted messages
     // should be translated to. For example, ['zh-CN', 'de'].
     'languages' => ['nl-NL', 'da-DE','es-ES','it-IT','ja-JP'],
+    // Not required but used to convert language codes
+    'lang_code_equiv' => [
+        'nl-NL' => 'Netherlands',
+        'da-DE' => 'German',
+        'es-ES' => 'Spanish',
+        'it-IT' => 'Italian',
+        'ja-JP' => 'Japanese',
+    ],
     // string, the name of the function for translating messages.
     // Defaults to 'Yii::t'. This is used as a mark to find the messages to be
     // translated. You may use a string for single function name or an array for
