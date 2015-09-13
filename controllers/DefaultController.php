@@ -61,12 +61,9 @@ class DefaultController extends Controller
 
     public function actionIndex()
     {
-    	if (!\Yii::$app->user->isGuest) {
-    		return $this->render('index', [
-    			'config' => require(__DIR__ . '/../config.php'),
-    		]);
-    	}
-    	return $this->goHome();
+		return $this->render('index', [
+			'config' => require(__DIR__ . '/../config.php'),
+		]);
     }
 
     public function actionTranslate($language)
