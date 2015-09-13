@@ -8,6 +8,8 @@ return [
     'languages' => ['nl-NL', 'da-DE','es-ES','it-IT','ja-JP'],
     // Not required but used to convert language codes
     'lang_code_equiv' => [
+        // en-us is the default language
+        'en-US' => 'English',
         'nl-NL' => 'Netherlands',
         'da-DE' => 'German',
         'es-ES' => 'Spanish',

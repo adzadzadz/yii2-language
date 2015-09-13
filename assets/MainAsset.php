@@ -18,6 +18,7 @@ class MainAsset extends AssetBundle
     public $sourcePath = '@yii2language/assets';
     public $js = [
         'main/js/ajax_save.js',
+        'main/js/main.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
