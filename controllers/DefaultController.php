@@ -5,7 +5,7 @@ namespace adz\yii2\language\controllers;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use adz\yii2\language\\models\Language;
+use adz\yii2\language\models\Language;
 
 class DefaultController extends Controller
 {
