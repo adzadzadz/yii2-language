@@ -1,6 +1,6 @@
 <?php
 
-    $this->title = 'Language Module';
+    $this->title = \Yii::t('yii2language_module', 'Translating Area');
 
     use yii\helpers\Url;
     use yii\helpers\Html;
@@ -8,18 +8,31 @@
     MainAsset::register($this);
 ?>
 
-<section id="language-translation-filter">
-    <div class="col-md-4">
-        <h3><?= Yii::t('yii2language_module', 'Filter by Category') ?></h3>
-        <?php 
+<section id="language-translation-selector">
+    <div class="row">
+        <div class="col-md-6">
+            <?php foreach ($config['languages'] as $each) { ?>
+                <a href="<?= Url::toRoute(['translate', 'language' => $each]) ?>" class="btn btn-primary btn-lg">
+                    <?= $each ?>
+                </a>        
+            <?php } ?>
+        </div>
+    </div>
+</section>
+<section id="language-translation-filter" style="margin: 25px 0px;">
+    <div class="row">
+        <div class="col-md-4">
+            <h3><?= Yii::t('yii2language_module', 'Filter by Category') ?></h3>
+            <?php 
 
-            foreach ($translation['source'] as $each){
-                $categories[$each->category] = $each->category;
-            }
+                foreach ($translation['source'] as $each){
+                    $categories[$each->category] = $each->category;
+                }
 
-         ?>
-         <?= Html::dropDownList('language-category-filter', null, $categories, ['class' => 'form-control', 'id' => 'language-category-filter']) ?>
-     </div>
+             ?>
+             <?= Html::dropDownList('language-category-filter', null, $categories, ['class' => 'form-control', 'id' => 'language-category-filter']) ?>
+        </div>
+    </div>
 </section>
 <section id="language-translation-module">
     <div class="col-md-10">
@@ -40,7 +53,7 @@
                     <td><?= Yii::t('yii2language_module', 'ID') ?></td>
                     <td><?= Yii::t('yii2language_module', 'Category') ?></td>
                     <td><?= Yii::t('yii2language_module', 'Message') ?></td>
-                    <td><?= Yii::t('yii2language_module', 'Translation') ?></td>
+                    <td><?= Yii::t('yii2language_module', 'Translation for') ?> <?= $language ?></td>
                 </tr>
             </thead>
             <tbody>
@@ -65,7 +78,7 @@
         </table>
         
     </div>
-    <div class="col-sm-2 hidden-xs" id="result" style="position: fixed; right: 0px; top: 100px; height: 80%; overflow: auto;">
+    <div class="col-md-2 hidden-sm" id="result" style="position: fixed; right: 0px; top: 100px; height: 80%; overflow: auto;">
         <h3><?= Yii::t('yii2language_module', 'Notifications') ?></h3>
         <div id="notif-container">
                       

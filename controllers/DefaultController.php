@@ -1,21 +1,21 @@
 <?php
 
-namespace adz\yii2\language\controllers;
+namespace app\modules\yii2language\controllers;
 
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use adz\yii2\language\models\Language;
+use app\modules\yii2language\models\Language;
 
 class DefaultController extends Controller
 {
-	// Enable language on all pages rendered by this controller.
-	public function init()
+    // Enable language on all pages rendered by this controller.
+    public function init()
     {
         \Yii::$app->language = \Yii::$app->request->cookies->getValue('language', 'en-US');
     }
 
-	public function behaviors()
+    public function behaviors()
     {
         return [
             'access' => [
@@ -61,43 +61,36 @@ class DefaultController extends Controller
 
     public function actionIndex()
     {
-		return $this->render('index', [
-			'config' => require(__DIR__ . '/../config.php'),
-		]);
+        if (!\Yii::$app->user->isGuest) {
+            return $this->render('index', [
+                'config' => require(__DIR__ . '/../config.php'),
+            ]);
+        }
+        return $this->goHome();
     }
 
     public function actionTranslate($language)
     {
-		$message = new Language;
-		return $this->render('translate', [
-			'language' => $language,
-			'translation' => $message->loadMessagesFromDb(),
-		]);
-
-    }
-
-    // Still working on this
-    public function actionCategory($language)
-    {
-		$message = new Language;
-		return $this->render('category', [
-			'language' => $language,
-			'config' => require(__DIR__ . '/../config.php'),
-		]);
+        $message = new Language;
+        return $this->render('translate', [
+            'config' => require(__DIR__ . '/../config.php'),
+            'language' => $language,
+            'translation' => $message->loadMessagesFromDb(),
+        ]);
 
     }
 
     public function actionUpdate()
     {
-		if (\Yii::$app->request->isAjax) {
+        if (\Yii::$app->request->isAjax) {
 
-			$translate = new Language();
+            $translate = new Language();
 
-			if ($translate->saveTranslation(\Yii::$app->request->post()['id'], \Yii::$app->request->post()['language'], \Yii::$app->request->post()['translation'])) {
-				return 'saved';
-			}
-			return 'failed';
-		}
-		return $this->goHome();
+            if ($translate->saveTranslation(\Yii::$app->request->post()['id'], \Yii::$app->request->post()['language'], \Yii::$app->request->post()['translation'])) {
+                return 'saved';
+            }
+            return 'failed';
+        }
+        return $this->goHome();
     }
 }
