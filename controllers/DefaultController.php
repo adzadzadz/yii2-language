@@ -1,11 +1,11 @@
 <?php
 
-namespace app\modules\yii2language\controllers;
+namespace adz\yii2\language\controllers;
 
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use app\modules\yii2language\models\Language;
+use adz\yii2\language\\models\Language;
 
 class DefaultController extends Controller
 {
@@ -75,7 +75,7 @@ class DefaultController extends Controller
         return $this->render('translate', [
             'config' => require(__DIR__ . '/../config.php'),
             'language' => $language,
-            'translation' => $message->loadMessagesFromDb(),
+            'translation' => $message->loadMessagesFromDb($language),
         ]);
 
     }

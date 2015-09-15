@@ -9,11 +9,11 @@ use adz\yii2\language\models\Message;
 
 class Language extends Model
 {
-    public function loadMessagesFromDb()
+    public function loadMessagesFromDb($language)
     {
         return [
             'source' => $this->getSource(),
-            'message' => $this->getMessage(),
+            'message' => $this->getMessage($language),
         ];
     }
 
@@ -30,9 +30,9 @@ class Language extends Model
         return $source;
     }
 
-    private function getMessage()
+    private function getMessage($language)
     {
-        $message = Message::find()->all();
+        $message = Message::find()->where(['language' => $language])->all();
         return $message;
     }
 }
