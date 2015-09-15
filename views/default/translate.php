@@ -4,7 +4,7 @@
 
     use yii\helpers\Url;
     use yii\helpers\Html;
-    use app\modules\yii2language\assets\MainAsset;
+    use adz\yii2\language\assets\MainAsset;
     MainAsset::register($this);
 ?>
 

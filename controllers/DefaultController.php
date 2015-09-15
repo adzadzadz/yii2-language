@@ -20,14 +20,14 @@ class DefaultController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index', 'translate', 'category', 'update'],
+                'only' => ['index', 'translate', 'update'],
                 'rules' => [
                     [
                         'allow' => true,
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['index', 'translate', 'category', 'update'],
+                        'actions' => ['index', 'translate', 'update'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
