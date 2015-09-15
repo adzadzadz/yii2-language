@@ -3,10 +3,24 @@
     $this->title = 'Language Module';
 
     use yii\helpers\Url;
+    use yii\helpers\Html;
     use app\modules\yii2language\assets\MainAsset;
     MainAsset::register($this);
 ?>
 
+<section id="language-translation-filter">
+    <div class="col-md-4">
+        <h3><?= Yii::t('yii2language_module', 'Filter by Category') ?></h3>
+        <?php 
+
+            foreach ($translation['source'] as $each){
+                $categories[$each->category] = $each->category;
+            }
+
+         ?>
+         <?= Html::dropDownList('language-category-filter', null, $categories, ['class' => 'form-control', 'id' => 'language-category-filter']) ?>
+     </div>
+</section>
 <section id="language-translation-module">
     <div class="col-md-10">
         <h3><?= Yii::t('yii2language_module', 'You are translating') ?> <?= $language ?></h3>
@@ -20,7 +34,7 @@
         ></div>
         <!-- common data - end -->
 
-        <table class="table table-striped">
+        <table id="translation-table" class="table table-striped">
             <thead>
                 <tr>
                     <td><?= Yii::t('yii2language_module', 'ID') ?></td>
@@ -29,8 +43,9 @@
                     <td><?= Yii::t('yii2language_module', 'Translation') ?></td>
                 </tr>
             </thead>
+            <tbody>
             <?php foreach ($translation['source'] as $eachSource) { ?>
-                <tr>
+                <tr class="cat_<?= $eachSource->category ?>">
                     <td><?= $eachSource->id ?></td>
                     <td><?= $eachSource->category ?></td>
                     <td><?= $eachSource->message ?></td>
@@ -46,6 +61,7 @@
                 <?php } ?>
                 </tr>
             <?php } ?>
+            </tbody>
         </table>
         
     </div>
