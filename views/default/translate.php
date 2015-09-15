@@ -3,7 +3,7 @@
     $this->title = 'Language Module';
 
     use yii\helpers\Url;
-    use adz\yii2\language\assets\MainAsset;
+    use app\modules\yii2language\assets\MainAsset;
     MainAsset::register($this);
 ?>
 
@@ -37,7 +37,10 @@
                 <?php foreach ($translation['message'] as $eachMessage) { ?>
                     <?php if ($eachSource->id === $eachMessage->id && $eachMessage->language === $language): ?>
                         <td width="50%">
-                        <input type="text" class="form-control translate" data-id="<?= $eachMessage->id ?>" value="<?= $eachMessage->translation ?>">
+                            <div class="input-group translate-field-group">
+                                <input type="text" class="form-control translate" data-id="<?= $eachMessage->id ?>" value="<?= $eachMessage->translation ?>">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon-text-size"></span></div>
+                            </div>
                         </td>
                     <?php endif ?>
                 <?php } ?>
@@ -46,7 +49,7 @@
         </table>
         
     </div>
-    <div class="col-md-2" id="result">
+    <div class="col-sm-2 hidden-xs" id="result" style="position: fixed; right: 0px; top: 100px; height: 80%; overflow: auto;">
         <h3><?= Yii::t('yii2language_module', 'Notifications') ?></h3>
         <div id="notif-container">
                       
